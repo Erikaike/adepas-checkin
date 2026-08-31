@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instructions d'arrivée - Pantin</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;padding:24px 16px;line-height:1.5;color:#222;background:#fafafa}
+.card{background:#fff;border-radius:12px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+h1{font-size:19px;margin-top:0}
+.lang{margin-top:28px;padding-top:20px;border-top:1px solid #e5e5e5}
+.lang:first-of-type{margin-top:20px}
+.code{background:#f0f0f0;padding:2px 8px;border-radius:6px;font-weight:bold;font-family:monospace;font-size:1.05em}
+a{color:#0a5}
+.wait{font-size:17px;text-align:center;padding:40px 16px}
+#unlocked{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+
+<div id="locked" class="wait">
+<p>🕐 Merci pour votre réservation !</p>
+<p>Vos instructions d'arrivée (code d'accès) seront disponibles sur cette page à partir de <b>17h</b>, heure du check-in.</p>
+<p style="color:#888;font-size:14px">Thank you for your reservation! Your arrival instructions will be available here from 17:00 (check-in time).<br>
+¡Gracias por su reserva! Sus instrucciones de llegada estarán disponibles aquí a partir de las 17h.</p>
+</div>
+
+<div id="unlocked">
+<h1>18 rue Jules Auffret, 93500 Pantin</h1>
+<p>Wifi : CPL wifi 500_958B20<br>Mot de passe : <span class="code">12345678</span></p>
+
+<div class="lang">
+<p>Bonjour,<br>voici vos instructions d'arrivée.</p>
+<p>Le code de l'immeuble : <span class="code">61A23</span></p>
+<p>Vous allez ensuite dans la cour. Le logement sera à droite et aura une boîte à clé à côté de la porte.</p>
+<p>Son code : <span class="code">2302</span> :)</p>
+<p>Bon séjour et bonne installation.</p>
+</div>
+
+<div class="lang">
+<p>Hello,<br>here are your arrival instructions.</p>
+<p>The building code is <span class="code">61A23</span>.</p>
+<p>Then go into the courtyard. The accommodation will be on the right and will have a key box next to the door.</p>
+<p>Its code is <span class="code">2302</span> :)</p>
+<p>Enjoy your stay and settle in well.</p>
+</div>
+
+<div class="lang">
+<p>Hola,<br>aquí tiene sus instrucciones de llegada.</p>
+<p>El código del edificio es <span class="code">61A23</span>.</p>
+<p>Después, entre en el patio. El alojamiento estará a la derecha y tendrá una caja de llaves al lado de la puerta.</p>
+<p>Su código es <span class="code">2302</span> :)</p>
+<p>Que tenga una buena estancia y una buena instalación.</p>
+</div>
+</div>
+
+</div>
+
+<script>
+(function () {
+  var hour = parseInt(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Paris', hour: '2-digit', hourCycle: 'h23'
+  }).format(new Date()), 10);
+  var unlocked = (hour >= 17) || (hour < 6);
+  if (unlocked) {
+    document.getElementById('locked').style.display = 'none';
+    document.getElementById('unlocked').style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>
