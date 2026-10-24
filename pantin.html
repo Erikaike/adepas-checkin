@@ -68,7 +68,7 @@ a{color:#0a5}
   var hour = parseInt(new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Europe/Paris', hour: '2-digit', hourCycle: 'h23'
   }).format(new Date()), 10);
-  var unlocked = (hour >= 17) || (hour < 6);
+  var unlocked = (hour >= 17) || (hour < 10);
   if (unlocked) {
     document.getElementById('locked').style.display = 'none';
     document.getElementById('unlocked').style.display = 'block';
